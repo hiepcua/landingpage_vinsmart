@@ -1,0 +1,242 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^/?$ 						index.php [QSA]
+RewriteRule ^contact/?$ 				index.php?com=contact [QSA]
+RewriteRule ^setting/?$ 				index.php?com=setting [QSA]
+RewriteRule ^forgot-password/?$ 		forgot-password.php
+
+# Menu
+RewriteRule ^menu/?$ 					index.php?com=menu&mnuid=$1 	[QSA]
+RewriteRule ^menu/active/([0-9]+)?$ 	index.php?com=menu&viewtype=active&id=$1 [QSA]
+RewriteRule ^menu/delete/([0-9]+)?$ 	index.php?com=menu&viewtype=delete&id=$1 [QSA]
+
+# Menuitem
+RewriteRule ^mnuitem/([0-9]+)?$ 					index.php?com=mnuitem&mnuid=$1 	[QSA]
+RewriteRule ^mnuitem/([0-9]+)/add?$ 				index.php?com=mnuitem&viewtype=add&mnuid=$1 [QSA]
+RewriteRule ^mnuitem/([0-9]+)/edit/([0-9]+)?$ 		index.php?com=mnuitem&viewtype=edit&mnuid=$1&id=$2 [QSA]
+RewriteRule ^mnuitem/([0-9]+)/active/([0-9]+)?$ 	index.php?com=mnuitem&viewtype=active&mnuid=$1&id=$2 [QSA]
+RewriteRule ^mnuitem/([0-9]+)/delete/([0-9]+)?$ 	index.php?com=mnuitem&viewtype=delete&mnuid=$1&id=$2 [QSA]
+
+RewriteRule ^content/?$ 					index.php?com=content [QSA]
+RewriteRule ^content/view?$ 				index.php?com=content&viewtype=view [QSA]
+RewriteRule ^content/add?$ 					index.php?com=content&viewtype=add [QSA]
+RewriteRule ^content/edit/([0-9]+)?$ 		index.php?com=content&viewtype=edit&id=$1 [QSA]
+RewriteRule ^content/write/?$ 				index.php?com=content&viewtype=write [QSA]
+RewriteRule ^content/pending/?$ 			index.php?com=content&viewtype=pending [QSA]
+RewriteRule ^content/waiting_public/?$ 		index.php?com=content&viewtype=waiting_public [QSA]
+RewriteRule ^content/public/?$ 				index.php?com=content&viewtype=public [QSA]
+RewriteRule ^content/deleted/?$ 			index.php?com=content&viewtype=deleted [QSA]
+RewriteRule ^content/takedown/?$ 			index.php?com=content&viewtype=takedown [QSA]
+RewriteRule ^content/return/?$ 				index.php?com=content&viewtype=return [QSA]
+RewriteRule ^content/delete/([0-9]+)?$ 		index.php?com=content&viewtype=delete&id=$1 [QSA]
+RewriteRule ^content/active/([0-9]+)?$ 		index.php?com=content&viewtype=active&id=$1 [QSA]
+RewriteRule ^content/ishot/([0-9]+)?$ 		index.php?com=content&viewtype=ishot&id=$1 [QSA]
+RewriteRule ^content/chu-nhat-vang/?$ 		index.php?com=content&viewtype=chu_nhat_vang [QSA]
+
+RewriteRule ^user/?$ 							index.php?com=user [QSA]
+RewriteRule ^profile/?$ 						index.php?com=user&viewtype=profile
+RewriteRule ^changepass/?$ 						index.php?com=user&viewtype=changepass
+RewriteRule ^user/getlist_user/([0-9]+)?$ 		index.php?com=user&viewtype=getlist_user&id=$1 [QSA]
+RewriteRule ^user/add/?$ 						index.php?com=user&viewtype=add
+RewriteRule ^user/edit/?$ 						index.php?com=user&viewtype=edit [QSA]
+RewriteRule ^user/active/?$ 					index.php?com=user&viewtype=active [QSA]
+RewriteRule ^user/delete/?$ 					index.php?com=user&viewtype=delete [QSA]
+RewriteRule ^logout/?$ 							index.php?com=user&viewtype=logout [QSA]
+
+RewriteRule ^groupuser/?$ 				index.php?com=groupuser [QSA]
+RewriteRule ^groupuser/add/?$ 			index.php?com=groupuser&viewtype=add 
+RewriteRule ^groupuser/edit/([0-9]+)?$ 	index.php?com=groupuser&viewtype=edit&id=$1 [QSA]
+
+RewriteRule ^categories/?$ 					index.php?com=categories [QSA]
+RewriteRule ^categories/add/?$ 				index.php?com=categories&viewtype=add 
+RewriteRule ^categories/edit/([0-9]+)?$ 	index.php?com=categories&viewtype=edit&id=$1 [QSA]
+RewriteRule ^categories/active/([0-9]+)?$ 	index.php?com=categories&viewtype=active&id=$1 [QSA]
+RewriteRule ^categories/delete/([0-9]+)?$ 	index.php?com=categories&viewtype=delete&id=$1 [QSA]
+
+
+RewriteRule ^event_group/?$ 					index.php?com=event_group [QSA]
+RewriteRule ^event_group/add/?$ 				index.php?com=event_group&viewtype=add 
+RewriteRule ^event_group/edit/([0-9]+)?$ 		index.php?com=event_group&viewtype=edit&id=$1 [QSA]
+RewriteRule ^event_group/active/([0-9]+)?$ 		index.php?com=event_group&viewtype=active&id=$1 [QSA]
+RewriteRule ^event_group/delete/([0-9]+)?$ 		index.php?com=event_group&viewtype=delete&id=$1 [QSA]
+
+
+RewriteRule ^event/?$ 						index.php?com=event [QSA]
+RewriteRule ^event/add/?$ 					index.php?com=event&viewtype=add 
+RewriteRule ^event/edit/([0-9]+)?$ 			index.php?com=event&viewtype=edit&id=$1 [QSA]
+RewriteRule ^event/active/([0-9]+)?$ 		index.php?com=event&viewtype=active&id=$1 [QSA]
+RewriteRule ^event/ishot/([0-9]+)?$ 		index.php?com=event&viewtype=ishot&id=$1 [QSA]
+RewriteRule ^event/delete/([0-9]+)?$ 		index.php?com=event&viewtype=delete&id=$1 [QSA]
+RewriteRule ^event/draft/?$ 				index.php?com=event&viewtype=draft&id=$1 [QSA]
+
+RewriteRule ^event_detail/?$ 						index.php?com=event_detail [QSA]
+RewriteRule ^event_detail/([0-9]+)?$ 				index.php?com=event_detail&viewtype=list2&event=$1 [QSA]
+RewriteRule ^event_detail/add/?$ 					index.php?com=event_detail&viewtype=add [QSA]
+RewriteRule ^event_detail/edit/([0-9]+)?$ 			index.php?com=event_detail&viewtype=edit&id=$1 [QSA]
+RewriteRule ^event_detail/active/([0-9]+)?$ 		index.php?com=event_detail&viewtype=active&id=$1 [QSA]
+RewriteRule ^event_detail/ishot/([0-9]+)?$ 			index.php?com=event_detail&viewtype=ishot&id=$1 [QSA]
+RewriteRule ^event_detail/delete/([0-9]+)?$ 		index.php?com=event_detail&viewtype=delete&id=$1 [QSA]
+
+
+RewriteRule ^bookcase/?$ 						index.php?com=bookcase [QSA]
+RewriteRule ^bookcase/add/?$ 					index.php?com=bookcase&viewtype=add 
+RewriteRule ^bookcase/edit/([0-9]+)?$ 			index.php?com=bookcase&viewtype=edit&id=$1 [QSA]
+RewriteRule ^bookcase/active/([0-9]+)?$ 		index.php?com=bookcase&viewtype=active&id=$1 [QSA]
+RewriteRule ^bookcase/ishot/([0-9]+)?$ 			index.php?com=bookcase&viewtype=ishot&id=$1 [QSA]
+RewriteRule ^bookcase/delete/([0-9]+)?$ 		index.php?com=bookcase&viewtype=delete&id=$1 [QSA]
+
+
+
+RewriteRule ^team/?$ 						index.php?com=team [QSA]
+RewriteRule ^team/add/?$ 					index.php?com=team&viewtype=add 
+RewriteRule ^team/edit/([0-9]+)?$ 			index.php?com=team&viewtype=edit&id=$1 [QSA]
+RewriteRule ^team/active/([0-9]+)?$ 		index.php?com=team&viewtype=active&id=$1 [QSA]
+RewriteRule ^team/delete/([0-9]+)?$ 		index.php?com=team&viewtype=delete&id=$1 [QSA]
+
+
+RewriteRule ^personnel_group/?$ 					index.php?com=personnel_group [QSA]
+RewriteRule ^personnel_group/add/?$ 				index.php?com=personnel_group&viewtype=add 
+RewriteRule ^personnel_group/edit/([0-9]+)?$ 		index.php?com=personnel_group&viewtype=edit&id=$1 [QSA]
+RewriteRule ^personnel_group/active/([0-9]+)?$ 		index.php?com=personnel_group&viewtype=active&id=$1 [QSA]
+RewriteRule ^personnel_group/delete/([0-9]+)?$ 		index.php?com=personnel_group&viewtype=delete&id=$1 [QSA]
+
+
+RewriteRule ^personnel_group2/?$ 						index.php?com=personnel_group2 [QSA]
+RewriteRule ^personnel_group2/add/?$ 					index.php?com=personnel_group2&viewtype=add 
+RewriteRule ^personnel_group2/edit/([0-9]+)?$ 			index.php?com=personnel_group2&viewtype=edit&id=$1 [QSA]
+RewriteRule ^personnel_group2/active/([0-9]+)?$ 		index.php?com=personnel_group2&viewtype=active&id=$1 [QSA]
+RewriteRule ^personnel_group2/delete/([0-9]+)?$ 		index.php?com=personnel_group2&viewtype=delete&id=$1 [QSA]
+
+
+RewriteRule ^personnel/?$ 						index.php?com=personnel [QSA]
+RewriteRule ^personnel/add/?$ 					index.php?com=personnel&viewtype=add 
+RewriteRule ^personnel/edit/([0-9]+)?$ 			index.php?com=personnel&viewtype=edit&id=$1 [QSA]
+RewriteRule ^personnel/active/([0-9]+)?$ 		index.php?com=personnel&viewtype=active&id=$1 [QSA]
+RewriteRule ^personnel/delete/([0-9]+)?$ 		index.php?com=personnel&viewtype=delete&id=$1 [QSA]
+RewriteRule ^personnel/import/?$ 				index.php?com=personnel&viewtype=import [QSA]
+
+
+RewriteRule ^publish_group/?$ 						index.php?com=publish_group [QSA]
+RewriteRule ^publish_group/add/?$ 					index.php?com=publish_group&viewtype=add 
+RewriteRule ^publish_group/edit/([0-9]+)?$ 			index.php?com=publish_group&viewtype=edit&id=$1 [QSA]
+RewriteRule ^publish_group/active/([0-9]+)?$ 		index.php?com=publish_group&viewtype=active&id=$1 [QSA]
+RewriteRule ^publish_group/delete/([0-9]+)?$ 		index.php?com=publish_group&viewtype=delete&id=$1 [QSA]
+
+
+RewriteRule ^publish/?$ 						index.php?com=publish [QSA]
+RewriteRule ^publish/add/?$ 					index.php?com=publish&viewtype=add 
+RewriteRule ^publish/edit/([0-9]+)?$ 			index.php?com=publish&viewtype=edit&id=$1 [QSA]
+RewriteRule ^publish/active/([0-9]+)?$ 			index.php?com=publish&viewtype=active&id=$1 [QSA]
+RewriteRule ^publish/delete/([0-9]+)?$ 			index.php?com=publish&viewtype=delete&id=$1 [QSA]
+
+
+
+RewriteRule ^album/?$ 								index.php?com=album [QSA]
+RewriteRule ^album/add/?$ 							index.php?com=album&viewtype=add
+RewriteRule ^album/edit/([0-9]+)?$ 					index.php?com=album&viewtype=edit&id=$1 [QSA]
+RewriteRule ^album/active/([0-9]+)?$ 				index.php?com=album&viewtype=active&id=$1 [QSA]
+RewriteRule ^album/ishot/([0-9]+)?$ 				index.php?com=album&viewtype=ishot&id=$1 [QSA]
+RewriteRule ^album/delete/([0-9]+)?$ 				index.php?com=album&viewtype=delete&id=$1 [QSA]
+RewriteRule ^album/([0-9a-zA-Z\-]+)-([0-9]+)?$ 		index.php?com=album&viewtype=list_images&id=$2 [QSA]
+
+# Module
+RewriteRule ^module/?$ 								index.php?com=module 	[QSA]
+RewriteRule ^module/add?$ 							index.php?com=module&viewtype=add 	[QSA]
+RewriteRule ^module/edit/([0-9]+)?$ 				index.php?com=module&viewtype=edit&id=$1 	[QSA]
+RewriteRule ^module/active/([0-9]+)?$ 				index.php?com=module&viewtype=active&id=$1 	[QSA]
+RewriteRule ^module/delete/([0-9]+)?$ 				index.php?com=module&viewtype=delete&id=$1 	[QSA]
+
+
+#Seo
+RewriteRule ^seo/?$ 								index.php?com=seo 	[QSA]
+RewriteRule ^seo/add?$ 								index.php?com=seo&task=add
+RewriteRule ^seo/edit/([0-9]+)?$ 					index.php?com=seo&task=edit&id=$1
+RewriteRule ^seo/delete/([0-9]+)?$ 					index.php?com=seo&task=delete&id=$1
+RewriteRule ^seo/active/([0-9]+)?$ 					index.php?com=seo&task=active&id=$1
+
+# Slider
+RewriteRule ^slider/?$ 								index.php?com=slider 	[QSA]
+RewriteRule ^slider/add?$ 							index.php?com=slider&task=add
+RewriteRule ^slider/edit/([0-9]+)?$ 				index.php?com=slider&task=edit&id=$1
+RewriteRule ^slider/delete/([0-9]+)?$ 				index.php?com=slider&task=delete&id=$1
+RewriteRule ^slider/active/([0-9]+)?$ 				index.php?com=slider&task=active&id=$1
+
+RewriteRule ^feedback/?$ 					index.php?com=feedback [QSA]
+RewriteRule ^feedback/add/?$ 				index.php?com=feedback&viewtype=add [QSA]
+RewriteRule ^feedback/edit/([0-9]+)?$ 		index.php?com=feedback&viewtype=edit&id=$1 [QSA]
+RewriteRule ^feedback/active/([0-9]+)?$ 	index.php?com=feedback&viewtype=active&id=$1 [QSA]
+RewriteRule ^feedback/delete/([0-9]+)?$ 	index.php?com=feedback&viewtype=delete&id=$1 [QSA]
+
+#Request
+RewriteRule ^request/?$ 					index.php?com=request [QSA]
+RewriteRule ^request/add/?$ 				index.php?com=request&viewtype=add [QSA]
+RewriteRule ^request/edit/([0-9]+)?$ 		index.php?com=request&viewtype=edit&id=$1 [QSA]
+RewriteRule ^request/active/([0-9]+)?$ 		index.php?com=request&viewtype=active&id=$1 [QSA]
+RewriteRule ^request/delete/([0-9]+)?$ 		index.php?com=request&viewtype=delete&id=$1 [QSA]
+
+# Page
+RewriteRule ^pages/?$ 							index.php?com=pages 	[QSA]
+RewriteRule ^pages/list?$ 						index.php?com=pages&task=list
+RewriteRule ^pages/add?$ 						index.php?com=pages&task=add
+RewriteRule ^pages/edit/([0-9]+)?$ 				index.php?com=pages&task=edit&id=$1
+RewriteRule ^pages/active/([0-9]+)?$ 			index.php?com=pages&task=active&id=$1
+RewriteRule ^pages/delete/([0-9]+)?$ 			index.php?com=pages&task=delete&id=$1
+
+# Tag
+RewriteRule ^tag/?$ 					index.php?com=tag [QSA]
+RewriteRule ^tag/add/?$ 				index.php?com=tag&viewtype=add 
+RewriteRule ^tag/edit/([0-9]+)?$ 		index.php?com=tag&viewtype=edit&id=$1 [QSA]
+RewriteRule ^tag/active/([0-9]+)?$ 		index.php?com=tag&viewtype=active&id=$1 [QSA]
+RewriteRule ^tag/delete/([0-9]+)?$ 		index.php?com=tag&viewtype=delete&id=$1 [QSA]
+
+
+# Registered
+RewriteRule ^registration/?$ 						index.php?com=registration [QSA]
+RewriteRule ^registration/add/?$ 					index.php?com=registration&viewtype=add 
+RewriteRule ^registration/edit/([0-9]+)?$ 			index.php?com=registration&viewtype=edit&id=$1 [QSA]
+RewriteRule ^registration/active/([0-9]+)?$ 		index.php?com=registration&viewtype=active&id=$1 [QSA]
+RewriteRule ^registration/delete/([0-9]+)?$ 		index.php?com=registration&viewtype=delete&id=$1 [QSA]
+
+# Partner
+RewriteRule ^partner/?$ 						index.php?com=partner [QSA]
+RewriteRule ^partner/add/?$ 					index.php?com=partner&viewtype=add 
+RewriteRule ^partner/edit/([0-9]+)?$ 			index.php?com=partner&viewtype=edit&id=$1 [QSA]
+RewriteRule ^partner/active/([0-9]+)?$ 			index.php?com=partner&viewtype=active&id=$1 [QSA]
+RewriteRule ^partner/delete/([0-9]+)?$ 			index.php?com=partner&viewtype=delete&id=$1 [QSA]
+
+
+# Common_knowledge
+RewriteRule ^common_knowledge/?$ 						index.php?com=common_knowledge [QSA]
+RewriteRule ^common_knowledge/add/?$ 					index.php?com=common_knowledge&viewtype=add 
+RewriteRule ^common_knowledge/edit/([0-9]+)?$ 			index.php?com=common_knowledge&viewtype=edit&id=$1 [QSA]
+RewriteRule ^common_knowledge/active/([0-9]+)?$ 		index.php?com=common_knowledge&viewtype=active&id=$1 [QSA]
+RewriteRule ^common_knowledge/delete/([0-9]+)?$ 		index.php?com=common_knowledge&viewtype=delete&id=$1 [QSA]
+
+# html block
+RewriteRule ^html_block/?$ 						index.php?com=html_block [QSA]
+RewriteRule ^html_block/add/?$ 					index.php?com=html_block&viewtype=add 
+RewriteRule ^html_block/edit/([0-9]+)?$ 		index.php?com=html_block&viewtype=edit&id=$1 [QSA]
+RewriteRule ^html_block/active/([0-9]+)?$ 		index.php?com=html_block&viewtype=active&id=$1 [QSA]
+RewriteRule ^html_block/delete/([0-9]+)?$ 		index.php?com=html_block&viewtype=delete&id=$1 [QSA]
+
+# Gallery
+RewriteRule ^gallery/?$ 							index.php?com=gallery 	[QSA]
+RewriteRule ^gallery/add?$ 							index.php?com=gallery&task=add
+RewriteRule ^gallery/edit/([0-9]+)?$ 				index.php?com=gallery&task=edit&id=$1
+RewriteRule ^gallery/delete/([0-9]+)?$ 				index.php?com=gallery&task=delete&id=$1
+RewriteRule ^gallery/active/([0-9]+)?$ 				index.php?com=gallery&task=active&id=$1
+RewriteRule ^gallery/add_gallery/([0-9]+)?$ 		index.php?com=gallery&task=add_gallery&id=$1
+
+php_flag display_errors  on
+php_value upload_max_filesize 1024M
+php_value post_max_size 1024M
+php_value max_input_time 300
+php_value max_execution_time 300
+
+#Bảo vệ file
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
