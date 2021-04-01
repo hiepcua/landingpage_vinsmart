@@ -65,26 +65,26 @@ if (isset($_SESSION['flash'.'com_registration_add']) && $_SESSION['flash'.'com_r
 <section class="content">
 	<div class='container-fluid'>
 		<div class="row widget-frm-search form-group">
-            <div class="col-md-10">
-                <form id="frm_search" method="get" action="<?php echo ROOTHOST.COMS;?>">
-                	<input type='hidden' id='txt_status' name='s' value=''/>
-                    <div class="frm-search-box form-inline pull-left">
-                    	<input type='text' id='txtkeyword' name='q' value="<?php echo $get_q;?>" class='form-control' placeholder="Số điện thoại..." />
-                        &nbsp&nbsp&nbsp
-                        <button type="submit" id="_btnSearch" class="btn btn-primary">Tìm kiếm</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-2">
-                <div class="pull-right">
-                    <form id="frm_actions" method="post" action="">
-                        <input type="hidden" name="txtaction" id="txtaction"/>
-                        <input type="hidden" name="txtids" id="txtids" />
-                    </form>
-                    <a href="<?php echo ROOTHOST.COMS;?>/add" class="btn btn-primary float-sm-right"><i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm mới</a>
-                </div>
-            </div>
-        </div>
+			<div class="col-md-10">
+				<form id="frm_search" method="get" action="<?php echo ROOTHOST.COMS;?>">
+					<input type='hidden' id='txt_status' name='s' value=''/>
+					<div class="frm-search-box form-inline pull-left">
+						<input type='text' id='txtkeyword' name='q' value="<?php echo $get_q;?>" class='form-control' placeholder="Số điện thoại..." />
+						&nbsp&nbsp&nbsp
+						<button type="submit" id="_btnSearch" class="btn btn-primary">Tìm kiếm</button>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-2">
+				<div class="pull-right">
+					<form id="frm_actions" method="post" action="">
+						<input type="hidden" name="txtaction" id="txtaction"/>
+						<input type="hidden" name="txtids" id="txtids" />
+					</form>
+					<a href="<?php echo ROOTHOST.COMS;?>/add" class="btn btn-primary float-sm-right"><i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm mới</a>
+				</div>
+			</div>
+		</div>
 
 		<div class="card">
 			<div class='table-responsive'>
@@ -129,11 +129,13 @@ if (isset($_SESSION['flash'.'com_registration_add']) && $_SESSION['flash'.'com_r
 										if(count($arr_loai_canho)>0){
 											foreach ($_LOAI_CANHO as $key => $value) {
 												$select='';
-												if(in_array($key, $arr_loai_canho)) $select='checked';
-												echo '<div class="form-check">
-												<input class="form-check-input" type="checkbox" name="loai_canho[]" value="'.$key.'" '.$select.'>
-												<label class="form-check-label">'.$value.'</label>
-												</div>';
+												if(in_array($key, $arr_loai_canho)){
+													$select='checked';
+													echo '<div class="form-check">
+													<input class="form-check-input" type="checkbox" name="loai_canho[]" value="'.$key.'" '.$select.'>
+													<label class="form-check-label">'.$value.'</label>
+													</div>';
+												}
 											}
 										}
 										?>

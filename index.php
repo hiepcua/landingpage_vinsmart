@@ -8,8 +8,19 @@ require_once(incl_path.'gfconfig.php');
 require_once(incl_path.'gfinit.php');
 require_once(incl_path.'gffunc.php');
 require_once(libs_path.'cls.mysql.php');
-define('ISHOME',true);
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$_LOAI_CANHO = array(
+    'CH1' => 'Căn hộ STUDIO: 28-33 m2 giá từ 1,2 - 1,5 tỷ',
+    'CH2' => 'Căn hộ 1PN+1: 43 m2 giá từ 1,6 tỷ - 1,8 tỷ',
+    'CH3' => 'Căn hộ 2PN, 1 WC: 55 m2 giá từ 1,6 tỷ',
+    'CH4' => 'Căn hộ 2PN +1, 2 WC: 64 m2 giá từ 1,6 tỷ',
+    'CH5' => 'Căn hộ 3PN, 2 WC : 75-94 m2 giá từ 2,7 tỷ',
+    'CH6' => 'Mat_bang_layout_chi_tiet_Sapphire.pdf',
+    'CH7' => 'Chinh_sach_new_11_3_2021.pdf',
+    'CH8' => 'Bang_gia_full_Vat_update_3_2021.xlsx',
+    'CH9' => 'Tieu_chuan_ban_giao_Sapphire.pdf',
+    'CH10' => 'Tai_lieu_ban_hang_tong_hop.pdf',
+);
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,6 +79,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     as="style"
     onload="this.onload = null;this.rel = 'stylesheet';"
     />
+    <script src='<?php echo ROOTHOST;?>global/js/jquery.min.js'></script>
     <link rel="preload" href="js/ladipage.vi.min.js" as="script" />
     <style id="style_ladi" type="text/css">
         a,
@@ -203,6 +215,9 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         table {
             border-collapse: collapse;
             border-spacing: 0;
+        }
+        html {
+            scroll-behavior: smooth;
         }
         body {
             font-size: 12px;
@@ -763,6 +778,9 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             z-index: 90000070;
             position: fixed;
             display: none;
+        }
+        #SECTION_POPUP .ladi-container > .ladi-element.show{
+            display: block !important;
         }
         #SECTION_POPUP .ladi-container > .ladi-element.hide-visibility {
             display: block !important;
@@ -1673,6 +1691,9 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 text-align: left;
                 line-height: 1.2;
             }
+            #HEADLINE28 > .ladi-headline>a{
+                text-decoration: unset;
+            }
             #HEADLINE30 {
                 width: 83px;
                 top: 27px;
@@ -2153,6 +2174,8 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 font-size: 18px;
                 text-align: center;
                 line-height: 2;
+                background: none;
+                padding: 12px;
             }
             #BUTTON463 {
                 width: 435.472px;
@@ -2496,10 +2519,12 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             }
             #BUTTON_TEXT420 {
                 width: 291px;
-                top: 10.33px;
-                left: 0px;
+                top: 15px;
+                left: 45px;
+                font-size: 18px;
+                font-weight: bold;
             }
-            #BUTTON_TEXT420 > .ladi-headline {
+            #BUTTON_TEXT420 .ladi-headline {
                 color: rgb(10, 54, 67);
                 font-size: 18px;
                 font-weight: bold;
@@ -5336,7 +5361,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 background-size: cover;
                 background-attachment: scroll;
                 background-origin: content-box;
-                background-image: url("images/57b167c9ca57d39c18a1c57c/bg-2.png");
+                background-image: url("images/bg-2.png");
                 background-position: center top;
                 background-repeat: no-repeat;
             }
@@ -9778,7 +9803,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             background-image: none !important;
         }
     </style>
-
 </head>
 <body>
     <div class="ladi-wraper">
@@ -9963,45 +9987,41 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         <h3 class="ladi-headline">*Thông tin của quý khách hàng luôn được bảo mật tuyệt đối.<br /></h3>
                     </div>
                     <div id="FORM418" data-config-id="604b72049064d900205c05b7" class="ladi-element">
-                        <form autocomplete="off" method="post" class="ladi-form">
+                        <form autocomplete="off" method="post" class="ladi-form" id="form_register1">
                             <div id="FORM_ITEM419" class="ladi-element">
                                 <div class="ladi-form-item-container">
                                     <div class="ladi-form-item-background"></div>
-                                    <div class="ladi-form-item"><input autocomplete="off" tabindex="1" name="phone" required class="ladi-form-control" type="tel" placeholder="Số điện thoại" pattern="[0-9]{9,12}" value="" /></div>
+                                    <div class="ladi-form-item"><input autocomplete="off" tabindex="1" name="phone" required class="ladi-form-control txt_phone" type="tel" placeholder="Số điện thoại" pattern="[0-9]{9,12}" value="" /></div>
                                 </div>
                             </div>
                             <div id="BUTTON420" class="ladi-element">
                                 <div class="ladi-button">
                                     <div class="ladi-button-background"></div>
-                                    <div id="BUTTON_TEXT420" class="ladi-element"><p class="ladi-headline">TẢI XUỐNG NGAY</p></div>
+                                    <button type="submit" class="ladi-headline"><div id="BUTTON_TEXT420" class="ladi-element">TẢI XUỐNG NGAY</div></button>
                                 </div>
                             </div>
                             <div id="FORM_ITEM422" class="ladi-element">
                                 <div class="ladi-form-item-container">
                                     <div class="ladi-form-item-background"></div>
                                     <div class="ladi-form-item ladi-form-checkbox ladi-form-checkbox-vertical">
-                                        <div class="ladi-form-checkbox-item">
-                                            <input tabindex="2" name="form_item1737" type="checkbox" value="Căn hộ STUDIO: 28-33 m2 giá từ 1,2 - 1,5 tỷ" /><span data-checked="false">Căn hộ STUDIO: 28-33 m2 giá từ 1,2 - 1,5 tỷ</span>
-                                        </div>
-                                        <div class="ladi-form-checkbox-item">
-                                            <input tabindex="2" name="form_item1737" type="checkbox" value="Căn hộ 1PN+1: 43 m2 giá từ 1,6 tỷ - 1,8 tỷ" /><span data-checked="false">Căn hộ 1PN+1: 43 m2 giá từ 1,6 tỷ - 1,8 tỷ</span>
-                                        </div>
-                                        <div class="ladi-form-checkbox-item">
-                                            <input tabindex="2" name="form_item1737" type="checkbox" value="Căn hộ 2PN, 1 WC: 55 m2 giá từ 1,6 tỷ" /><span data-checked="false">Căn hộ 2PN, 1 WC: 55 m2 giá từ 1,6 tỷ</span>
-                                        </div>
-                                        <div class="ladi-form-checkbox-item">
-                                            <input tabindex="2" name="form_item1737" type="checkbox" value="Căn hộ 2PN +1, 2 WC: 64 m2 giá từ 1,6 tỷ" /><span data-checked="false">Căn hộ 2PN +1, 2 WC: 64 m2 giá từ 1,6 tỷ</span>
-                                        </div>
-                                        <div class="ladi-form-checkbox-item">
-                                            <input tabindex="2" name="form_item1737" type="checkbox" value="Căn hộ 3PN, 2 WC : 75-94 m2 giá từ 2,7 tỷ" /><span data-checked="false">Căn hộ 3PN, 2 WC : 75-94 m2 giá từ 2,7 tỷ</span>
-                                        </div>
+                                        <?php
+                                        $i=0;
+                                        foreach ($_LOAI_CANHO as $key => $value) {
+                                            $i++;
+                                            if($i<=5){
+                                                echo '<div class="ladi-form-checkbox-item">
+                                                <input tabindex="2" name="form_item1737[]" type="checkbox" value="'.$key.'" /><span data-checked="false">'.$value.'</span>
+                                                </div>';
+                                            }
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
                             <div id="FORM_ITEM591" class="ladi-element">
                                 <div class="ladi-form-item-container">
                                     <div class="ladi-form-item-background"></div>
-                                    <div class="ladi-form-item"><input autocomplete="off" tabindex="3" name="email" required class="ladi-form-control" type="email" placeholder="Email" value="" /></div>
+                                    <div class="ladi-form-item"><input autocomplete="off" tabindex="3" name="email" required class="ladi-form-control txt_email" type="email" placeholder="Email" value="" /></div>
                                 </div>
                             </div>
                             <button type="submit" class="ladi-hidden"></button>
@@ -10283,9 +10303,10 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             <div id="BUTTON697" class="ladi-element">
                                 <div class="ladi-button">
                                     <div class="ladi-button-background"></div>
-                                    <div id="BUTTON_TEXT697" class="ladi-element"><p class="ladi-headline">TẢI NGAY</p></div>
+                                    <div id="BUTTON_TEXT697" class="ladi-element"><button type="submit" style="background: none; padding: 10px 24px;"><p class="ladi-headline">TẢI NGAY</p></button></div>
                                 </div>
                             </div>
+
                             <div id="FORM_ITEM699" class="ladi-element">
                                 <div class="ladi-form-item-container">
                                     <div class="ladi-form-item-background"></div>
@@ -10813,7 +10834,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             <div id="BUTTON898" class="ladi-element">
                                 <div class="ladi-button">
                                     <div class="ladi-button-background"></div>
-                                    <div id="BUTTON_TEXT898" class="ladi-element"><p class="ladi-headline">ĐĂNG KÝ NGAY</p></div>
+                                    <div id="BUTTON_TEXT898" class="ladi-element"><button type="submit" style="background: none; padding: 9px 0;" class="ladi-headline">ĐĂNG KÝ NGAY</button></div>
                                 </div>
                             </div>
                             <div id="FORM_ITEM900" class="ladi-element">
@@ -10896,7 +10917,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             <div id="BUTTON290" class="ladi-element">
                                 <div class="ladi-button">
                                     <div class="ladi-button-background"></div>
-                                    <div id="BUTTON_TEXT290" class="ladi-element"><p class="ladi-headline">ĐĂNG KÝ NGAY</p></div>
+                                    <div id="BUTTON_TEXT290" class="ladi-element"><button type="submit" style="background: none; padding: 12px 0;" class="ladi-headline">ĐĂNG KÝ NGAY</button></div>
                                 </div>
                             </div>
                             <button type="submit" class="ladi-hidden"></button>
@@ -10935,28 +10956,24 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                     <div id="BUTTON463" class="ladi-element">
                                         <div class="ladi-button">
                                             <div class="ladi-button-background"></div>
-                                            <div id="BUTTON_TEXT463" class="ladi-element"><p class="ladi-headline">TẢI XUỐNG NGAY</p></div>
+                                            <div id="BUTTON_TEXT463" class="ladi-element"><button type="submit" class="ladi-headline">TẢI XUỐNG NGAY</button></div>
                                         </div>
                                     </div>
                                     <div id="FORM_ITEM465" class="ladi-element">
                                         <div class="ladi-form-item-container">
                                             <div class="ladi-form-item-background"></div>
                                             <div class="ladi-form-item ladi-form-checkbox ladi-form-checkbox-horizontal">
-                                                <div class="ladi-form-checkbox-item">
-                                                    <input tabindex="2" name="form_item1737" type="checkbox" value="Mat_bang_layout_chi_tiet_Sapphire.pdf" /><span data-checked="false">Mat_bang_layout_chi_tiet_Sapphire.pdf</span>
-                                                </div>
-                                                <div class="ladi-form-checkbox-item">
-                                                    <input tabindex="2" name="form_item1737" type="checkbox" value="Chinh_sach_new_11_3_2021.pdf" /><span data-checked="false">Chinh_sach_new_11_3_2021.pdf</span>
-                                                </div>
-                                                <div class="ladi-form-checkbox-item">
-                                                    <input tabindex="2" name="form_item1737" type="checkbox" value="Bang_gia_full_Vat_update_3_2021.xlsx" /><span data-checked="false">Bang_gia_full_Vat_update_3_2021.xlsx</span>
-                                                </div>
-                                                <div class="ladi-form-checkbox-item">
-                                                    <input tabindex="2" name="form_item1737" type="checkbox" value="Tieu_chuan_ban_giao_Sapphire.pdf" /><span data-checked="false">Tieu_chuan_ban_giao_Sapphire.pdf</span>
-                                                </div>
-                                                <div class="ladi-form-checkbox-item">
-                                                    <input tabindex="2" name="form_item1737" type="checkbox" value="Tai_lieu_ban_hang_tong_hop.pdf" /><span data-checked="false">Tai_lieu_ban_hang_tong_hop.pdf</span>
-                                                </div>
+                                                <?php
+                                                $i=0;
+                                                foreach ($_LOAI_CANHO as $key => $value) {
+                                                    $i++;
+                                                    if($i>5){
+                                                        echo '<div class="ladi-form-checkbox-item">
+                                                        <input tabindex="2" name="form_item1737[]" type="checkbox" value="'.$key.'" /><span data-checked="false">'.$value.'</span>
+                                                        </div>';
+                                                    }
+                                                }
+                                                ?>
                                             </div>
                                         </div>
                                     </div>
@@ -10975,6 +10992,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         </div>
                     </div>
                 </div>
+                <div class="popup-close" style="display: block !important;"></div>
             </div>
             <div id="POPUP487" class="ladi-element">
                 <div class="ladi-popup">
@@ -11057,12 +11075,85 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         </div>
                     </div>
                 </div>
+                <div class="popup-close" style="display: block !important;"></div>
             </div>
         </div>
     </div>
 </div>
 <div id="backdrop-popup" class="backdrop-popup"></div>
 <div id="lightbox-screen" class="lightbox-screen"></div>
+<script type="text/javascript">
+    $(function() {
+        $("body").on("click", "#BUTTON_TEXT991, #BUTTON_TEXT1059, #BUTTON_TEXT224, #BUTTON_TEXT917", function(e) {
+            $('#POPUP437').show();
+            return false;
+        });
+
+        /* click in out div */
+        $('body').click(function() {
+            $('#POPUP437, #POPUP487, #POPUP1003, #POPUP1071').hide();
+        });
+
+        $('#POPUP437, #POPUP487, #POPUP1003, #POPUP1071').click(function(event){
+            event.stopPropagation();
+        });
+        /* end click in out div */
+    });
+
+    $(document).ready(function(){
+        //prevent form resubmission when page is refreshed (F5 / CTRL+R)
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+
+        $("form.ladi-form").submit(function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            var _url="ajaxs/save_register.php";
+            $.ajax({
+                url: _url,
+                type: 'POST',
+                data: formData,
+                success: function (res) {
+                    console.log(res);
+                    if(res == 'success'){
+                        $('#POPUP1071').show()
+                    }else{
+                        alert('Lỗi!');
+                    }
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+        });
+
+        $('.popup-close').click(function(){
+            $(this).parent().hide();
+        });
+
+        $('#HEADLINE27').click(function(){
+            var element = document.getElementById("SECTION902");
+            element.scrollIntoView();
+        })
+        $('#HEADLINE28').click(function(){
+            var element = document.getElementById("SECTION48");
+            element.scrollIntoView();
+        })
+        $('#HEADLINE30').click(function(){
+            var element = document.getElementById("SECTION84");
+            element.scrollIntoView();
+        })
+        $('#HEADLINE31').click(function(){
+            var element = document.getElementById("SECTION601");
+            element.scrollIntoView();
+        })
+        $('#HEADLINE580').click(function(){
+            var element = document.getElementById("SECTION626");
+            element.scrollIntoView();
+        })
+    });
+</script>
 <script id="script_lazyload" type="text/javascript">
     (function () {
         var list_element_lazyload = document.querySelectorAll(
@@ -11096,13 +11187,13 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         window.addEventListener("scroll", stopLazyload);
     })();
 </script>
-        <!--[if lt IE 9]>
-            <script src="https://w.ladicdn.com/v2/source/html5shiv.min.js?v=1614062170934"></script>
-            <script src="https://w.ladicdn.com/v2/source/respond.min.js?v=1614062170934"></script>
-        <![endif]-->
-        <link href="https://fonts.googleapis.com/css?family=Roboto Slab:bold,regular|Quicksand:bold,regular|Oswald:bold,regular|Open Sans:bold,regular|Roboto:bold,regular|Itim:bold,regular&display=swap" rel="stylesheet" type="text/css" />
-        <link href="css/ladipage.min.css" rel="stylesheet" type="text/css" />
-        <script src="js/ladipage.vi.min.js" type="text/javascript"></script>
+<!--[if lt IE 9]>
+    <script src="https://w.ladicdn.com/v2/source/html5shiv.min.js?v=1614062170934"></script>
+    <script src="https://w.ladicdn.com/v2/source/respond.min.js?v=1614062170934"></script>
+<![endif]-->
+<link href="https://fonts.googleapis.com/css?family=Roboto Slab:bold,regular|Quicksand:bold,regular|Oswald:bold,regular|Open Sans:bold,regular|Roboto:bold,regular|Itim:bold,regular&display=swap" rel="stylesheet" type="text/css" />
+<link href="css/ladipage.min.css" rel="stylesheet" type="text/css" />
+<script src="js/ladipage.vi.min.js" type="text/javascript"></script>
 
-    </body>
-    </html>
+</body>
+</html>

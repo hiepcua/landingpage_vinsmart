@@ -6,19 +6,19 @@ function isSSL(){
 }
 $REQUEST_PROTOCOL = isSSL()? 'https://' : 'http://';
 // define('ROOTHOST',$REQUEST_PROTOCOL.$_SERVER['HTTP_HOST'].'/');
-define('ROOTHOST','http://localhost/vinsmart/admin/');
-define('ROOTHOST_WEB','http://localhost/vinsmart/');
+define('ROOTHOST','http://localhost/landingpage_vinsmart/admin/');
+define('ROOTHOST_WEB','http://localhost/landingpage_vinsmart/');
 define('ROOTHOST_ADMIN',$REQUEST_PROTOCOL.$_SERVER['HTTP_HOST'].'/admin/');
 define('WEBSITE',$REQUEST_PROTOCOL.$_SERVER['HTTP_HOST'].'/');
 define('DOMAIN','ott.ecohub.asia');
 define('ROOT_IMAGE','/home/admin/web/ecohub.asia/public_html/');
 define('ROOT_MEDIA','/home/admin/web/ecohub.asia/public_html/uploads/media/');
 define('BASEVIRTUAL0','/home/admin/web/ecohub.asia/public_html/uploads/');
-define('PLUGINS_HOST',$_SERVER['DOCUMENT_ROOT'].'/vinsmart/admin/global/plugins/');
-define('MEDIA_HOST',$_SERVER['DOCUMENT_ROOT'].'/vinsmart/medias/');
-define('DOCUMENT_FILE',$_SERVER['DOCUMENT_ROOT'].'/vinsmart/files/');
+define('PLUGINS_HOST',$_SERVER['DOCUMENT_ROOT'].'/landingpage_vinsmart/admin/global/plugins/');
+define('MEDIA_HOST',$_SERVER['DOCUMENT_ROOT'].'/landingpage_vinsmart/medias/');
+define('DOCUMENT_FILE',$_SERVER['DOCUMENT_ROOT'].'/landingpage_vinsmart/files/');
 define('IMAGE_HOST',ROOTHOST_WEB.'medias/');
-define('IMAGE_CONTENTS_HOST', $_SERVER['DOCUMENT_ROOT'].'/vinsmart/medias/contents/');
+define('IMAGE_CONTENTS_HOST', $_SERVER['DOCUMENT_ROOT'].'/landingpage_vinsmart/medias/contents/');
 define('AVATAR_DEFAULT',ROOTHOST.'global/img/avatars/male.png');
 define('IMAGE_DEFAULT',ROOTHOST.'global/img/no-photo.jpg');
 
@@ -70,10 +70,15 @@ $_MEDIA_TYPE=array('mp4','mp3');
 $_IMAGE_TYPE=array('jpeg','jpg','gif','png');
 
 $_LOAI_CANHO = array(
-	'CH1' => 'Căn hộ STUDIO: 28-33 m2 giá từ 1,2 - 1,5 tỷ',
-	'CH2' => 'Căn hộ 1PN+1: 43 m2 giá từ 1,6 tỷ - 1,8 tỷ',
-	'CH3' => 'Căn hộ 2PN, 1 WC: 55 m2 giá từ 1,6 tỷ',
-	'CH4' => 'Căn hộ 2PN +1, 2 WC: 64 m2 giá từ 1,6 tỷ',
-	'CH5' => 'Căn hộ 3PN, 2 WC : 75-94 m2 giá từ 2,7 tỷ'
+    'CH1' => 'Căn hộ STUDIO: 28-33 m2 giá từ 1,2 - 1,5 tỷ',
+    'CH2' => 'Căn hộ 1PN+1: 43 m2 giá từ 1,6 tỷ - 1,8 tỷ',
+    'CH3' => 'Căn hộ 2PN, 1 WC: 55 m2 giá từ 1,6 tỷ',
+    'CH4' => 'Căn hộ 2PN +1, 2 WC: 64 m2 giá từ 1,6 tỷ',
+    'CH5' => 'Căn hộ 3PN, 2 WC : 75-94 m2 giá từ 2,7 tỷ',
+    'CH6' => 'Mat_bang_layout_chi_tiet_Sapphire.pdf',
+    'CH7' => 'Chinh_sach_new_11_3_2021.pdf',
+    'CH8' => 'Bang_gia_full_Vat_update_3_2021.xlsx',
+    'CH9' => 'Tieu_chuan_ban_giao_Sapphire.pdf',
+    'CH10' => 'Tai_lieu_ban_hang_tong_hop.pdf',
 );
 ?>
