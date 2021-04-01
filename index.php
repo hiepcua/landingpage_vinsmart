@@ -5205,6 +5205,8 @@ $_LOAI_CANHO = array(
                 font-weight: bold;
                 text-align: center;
                 line-height: 2;
+                background: none;
+                padding: 4px;
             }
             #BUTTON1023 {
                 width: 300.973px;
@@ -5716,6 +5718,11 @@ $_LOAI_CANHO = array(
             }
             #SECTION1 {
                 height: 88.843px;
+                top: 1px;
+                left: 0px;
+                width: 100%;
+                position: fixed;
+                z-index: 90000050;
             }
             #SECTION1 > .ladi-section-background {
                 background: rgba(79, 159, 202, 1);
@@ -6229,6 +6236,8 @@ $_LOAI_CANHO = array(
                 font-size: 18px;
                 text-align: center;
                 line-height: 2;
+                background: none;
+                padding: 5px;
             }
             #BUTTON463 {
                 width: 311.067px;
@@ -6573,8 +6582,9 @@ $_LOAI_CANHO = array(
             }
             #BUTTON_TEXT420 {
                 width: 386px;
-                top: 9.77382px;
-                left: 0px;
+                top: 15px;
+                left: -20px;
+                font-size: 18px;
             }
             #BUTTON_TEXT420 > .ladi-headline {
                 color: rgb(10, 54, 67);
@@ -9277,6 +9287,7 @@ $_LOAI_CANHO = array(
                 font-weight: bold;
                 text-align: center;
                 line-height: 2;
+                background: none;
             }
             #BUTTON1023 {
                 width: 353.973px;
@@ -10344,7 +10355,7 @@ $_LOAI_CANHO = array(
                     <div id="BUTTON1023" class="ladi-element">
                         <div class="ladi-button">
                             <div class="ladi-button-background"></div>
-                            <div id="BUTTON_TEXT1023" class="ladi-element"><p class="ladi-headline">TẢI NGAY</p></div>
+                            <div id="BUTTON_TEXT1023" class="ladi-element"><button type="submit" class="ladi-headline">TẢI NGAY</button></div>
                         </div>
                     </div>
                     <button type="submit" class="ladi-hidden"></button>
@@ -11045,6 +11056,7 @@ $_LOAI_CANHO = array(
                     <div data-action="true" id="HEADLINE1008" class="ladi-element"><h3 class="ladi-headline">TIỆN ÍCH</h3></div>
                     <div data-action="true" id="HEADLINE1009" class="ladi-element"><h3 class="ladi-headline">BẢNG GIÁ</h3></div>
                 </div>
+                <div class="popup-close" style="display: block !important;"></div>
             </div>
             <div id="POPUP1071" class="ladi-element">
                 <div class="ladi-popup">
@@ -11084,17 +11096,22 @@ $_LOAI_CANHO = array(
 <div id="lightbox-screen" class="lightbox-screen"></div>
 <script type="text/javascript">
     $(function() {
-        $("body").on("click", "#BUTTON_TEXT991, #BUTTON_TEXT1059, #BUTTON_TEXT224, #BUTTON_TEXT917", function(e) {
+        $("body").on("click", "#BUTTON_TEXT991, #BUTTON_TEXT1059, #BUTTON_TEXT224, #BUTTON_TEXT917, #BUTTON_TEXT690, #BUTTON_TEXT672, #BUTTON_TEXT681, #BUTTON_TEXT690", function(e) {
             $('#POPUP437').show();
+            return false;
+        });
+
+        $("body").on("click", "#GROUP998", function(e) {
+            $('#POPUP1003').show();
             return false;
         });
 
         /* click in out div */
         $('body').click(function() {
-            $('#POPUP437, #POPUP487, #POPUP1003, #POPUP1071').hide();
+            $('#POPUP437, #POPUP487, #POPUP1003, #POPUP1071, #POPUP1003').hide();
         });
 
-        $('#POPUP437, #POPUP487, #POPUP1003, #POPUP1071').click(function(event){
+        $('#POPUP437, #POPUP487, #POPUP1003, #POPUP1071, #POPUP1003').click(function(event){
             event.stopPropagation();
         });
         /* end click in out div */
